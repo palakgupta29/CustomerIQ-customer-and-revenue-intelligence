@@ -1,0 +1,6 @@
+content = open('frontend/dashboard.py', encoding='utf-8').read()
+before = content.count('use_container_width=True')
+content = content.replace('use_container_width=True', "width='stretch'")
+content = content.replace('use_container_width=False', "width='content'")
+open('frontend/dashboard.py', 'w', encoding='utf-8').write(content)
+print(f"Fixed {before} occurrences of use_container_width=True")
